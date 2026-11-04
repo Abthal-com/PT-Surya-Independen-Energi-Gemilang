@@ -1,0 +1,1787 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT. Surya Independen Energi Gemilang | Solusi Energi CNG</title>
+    <meta name="description" content="PT. Surya Independen Energi Gemilang - Penyedia dan distributor energi gas bumi terkompresi (CNG) terpercaya di Jawa Timur.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* ========== RESET & BASE ========== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0a0e27;
+            --navy-light: #141833;
+            --navy-mid: #1a1f3d;
+            --gold: #e8a838;
+            --gold-light: #f0c040;
+            --gold-dark: #c48820;
+            --orange: #f07830;
+            --white: #ffffff;
+            --gray-100: #f4f6f8;
+            --gray-200: #e2e6ea;
+            --gray-300: #b0b8c4;
+            --gray-600: #6c7a8a;
+            --text-dark: #1a1a2e;
+            --text-light: #c8ccd4;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.3;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--orange));
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--gray-600);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 20px auto 0;
+        }
+
+        /* ========== ANIMATIONS ========== */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.8; }
+        }
+
+        @keyframes rotate-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        /* ========== NAVBAR ========== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: all 0.4s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 12px 0;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--white);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .nav-logo .logo-icon {
+            width: 42px;
+            height: 42px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+
+        .nav-toggle span {
+            width: 28px;
+            height: 2.5px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, #0a0e27 0%, #141833 30%, #1a1f3d 60%, #0f1229 100%);
+            overflow: hidden;
+        }
+
+        .hero-bg-elements {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+
+        .hero-bg-elements .circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.07;
+        }
+
+        .hero-bg-elements .circle-1 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--gold), transparent 70%);
+            top: -200px;
+            right: -200px;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero-bg-elements .circle-2 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--orange), transparent 70%);
+            bottom: -150px;
+            left: -100px;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        .hero-bg-elements .circle-3 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--gold-light), transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse-glow 4s ease-in-out infinite;
+        }
+
+        .hero-particles {
+            position: absolute;
+            inset: 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 50%;
+            opacity: 0;
+            animation: particle-rise linear infinite;
+        }
+
+        @keyframes particle-rise {
+            0% { opacity: 0; transform: translateY(100vh) scale(0); }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% { opacity: 0; transform: translateY(-10vh) scale(1); }
+        }
+
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(232,168,56,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(232,168,56,0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-logo-wrapper {
+            margin-bottom: 30px;
+        }
+
+        .hero-logo-svg {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            filter: drop-shadow(0 0 30px rgba(232,168,56,0.3));
+        }
+
+        .hero-brand {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light), var(--orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-tagline {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            background: linear-gradient(135deg, var(--gold), var(--orange));
+            color: var(--white);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 8px 30px rgba(232,168,56,0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(232,168,56,0.4);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            background: transparent;
+            color: var(--white);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        .hero-scroll-indicator i {
+            font-size: 1.2rem;
+        }
+
+        /* ========== WAVE DIVIDER ========== */
+        .wave-divider {
+            position: relative;
+            margin-top: -2px;
+        }
+
+        .wave-divider svg {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        /* ========== ABOUT SECTION ========== */
+        .about {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.1rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            color: var(--navy);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .about-text p {
+            color: var(--gray-600);
+            font-size: 1.05rem;
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 36px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 24px 16px;
+            background: var(--gray-100);
+            border-radius: 16px;
+            transition: transform 0.3s;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-item .stat-icon {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .stat-item .stat-value {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .stat-item .stat-label {
+            font-size: 0.85rem;
+            color: var(--gray-600);
+            margin-top: 4px;
+        }
+
+        .about-visual {
+            position: relative;
+        }
+
+        .about-card-visual {
+            background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+            border-radius: 24px;
+            padding: 50px 40px;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-card-visual::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(232,168,56,0.1), transparent 70%);
+        }
+
+        .about-card-visual .big-icon {
+            font-size: 5rem;
+            color: var(--gold);
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .about-card-visual h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .about-card-visual p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            position: relative;
+            line-height: 1.7;
+        }
+
+        /* ========== SERVICES SECTION ========== */
+        .services {
+            padding: 100px 0;
+            background: var(--gray-100);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px 32px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--gray-200);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--orange));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            border-color: transparent;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, rgba(232,168,56,0.1), rgba(240,120,48,0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 1.8rem;
+            color: var(--gold);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover .service-icon {
+            background: linear-gradient(135deg, var(--gold), var(--orange));
+            color: var(--white);
+            transform: scale(1.05);
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 14px;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ========== ADVANTAGES SECTION ========== */
+        .advantages {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--navy), var(--navy-light));
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .advantages::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(232,168,56,0.08), transparent 70%);
+            border-radius: 50%;
+        }
+
+        .advantages .section-title h2 {
+            color: var(--white);
+        }
+
+        .advantages .section-title p {
+            color: var(--text-light);
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .advantage-item {
+            padding: 36px 28px;
+            border-radius: 16px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: all 0.3s;
+            text-align: center;
+            position: relative;
+        }
+
+        .advantage-item:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(232,168,56,0.3);
+            transform: translateY(-5px);
+        }
+
+        .advantage-item .adv-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), var(--orange));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.4rem;
+            color: var(--white);
+        }
+
+        .advantage-item h4 {
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .advantage-item p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* ========== LEGAL SECTION ========== */
+        .legal {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .legal-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .legal-info {
+            background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+            border-radius: 24px;
+            padding: 48px 40px;
+            color: var(--white);
+        }
+
+        .legal-info h3 {
+            font-size: 1.6rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 16px;
+        }
+
+        .legal-info h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+
+        .legal-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            margin-bottom: 22px;
+            padding-bottom: 22px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .legal-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .legal-item i {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+
+        .legal-item .label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 4px;
+        }
+
+        .legal-item .value {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .legal-description h3 {
+            font-size: 1.8rem;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .legal-description p {
+            color: var(--gray-600);
+            font-size: 1.05rem;
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .legal-badges {
+            display: flex;
+            gap: 16px;
+            margin-top: 28px;
+            flex-wrap: wrap;
+        }
+
+        .legal-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--gray-100);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--navy);
+        }
+
+        .legal-badge i {
+            color: #27ae60;
+        }
+
+        /* ========== CONTACT SECTION ========== */
+        .contact {
+            padding: 100px 0;
+            background: var(--gray-100);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info-card {
+            background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+            border-radius: 24px;
+            padding: 48px 40px;
+            color: var(--white);
+        }
+
+        .contact-info-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-info-card > p {
+            color: var(--text-light);
+            margin-bottom: 36px;
+            font-size: 0.95rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            margin-bottom: 28px;
+        }
+
+        .contact-detail .icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(232,168,56,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-detail .detail-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 4px;
+        }
+
+        .contact-detail .detail-value {
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .contact-detail .detail-value a {
+            color: var(--white);
+            transition: color 0.3s;
+        }
+
+        .contact-detail .detail-value a:hover {
+            color: var(--gold);
+        }
+
+        .contact-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 36px;
+        }
+
+        .contact-social a {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .contact-social a:hover {
+            background: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        .contact-map {
+            border-radius: 24px;
+            overflow: hidden;
+            height: 100%;
+            min-height: 400px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .contact-map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 60px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .footer-brand .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand .footer-logo h3 {
+            font-size: 1.2rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .footer h4 {
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+            transform: translateX(4px);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            margin-bottom: 14px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .footer-contact-item i {
+            color: var(--gold);
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+
+        .footer-bottom {
+            padding: 24px 0;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        /* ========== WHATSAPP FLOAT BUTTON ========== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #25d366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.8rem;
+            box-shadow: 0 6px 24px rgba(37,211,102,0.4);
+            transition: all 0.3s;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37,211,102,0.5);
+        }
+
+        .whatsapp-float .tooltip {
+            position: absolute;
+            right: 72px;
+            background: var(--white);
+            color: var(--text-dark);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            white-space: nowrap;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .whatsapp-float:hover .tooltip {
+            opacity: 1;
+        }
+
+        /* ========== BACK TO TOP ========== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 100px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--navy);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            z-index: 998;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .about-grid,
+            .legal-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .advantages-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: var(--navy);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 28px;
+                transition: right 0.4s ease;
+                box-shadow: -10px 0 40px rgba(0,0,0,0.3);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                font-size: 1.1rem;
+            }
+
+            .nav-toggle {
+                display: flex;
+                z-index: 1001;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-brand {
+                font-size: 1.2rem;
+                letter-spacing: 4px;
+            }
+
+            .hero-logo-svg {
+                width: 80px;
+                height: 80px;
+            }
+
+            .about-stats {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+            }
+
+            .advantages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .back-to-top {
+                right: 30px;
+                bottom: 100px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero-tagline {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-item {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                text-align: left;
+            }
+
+            .stat-item .stat-icon {
+                margin-bottom: 0;
+            }
+
+            .legal-info {
+                padding: 32px 24px;
+            }
+
+            .contact-info-card {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#beranda" class="nav-logo">
+                <svg class="logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="flame-grad-nav" x1="50" y1="0" x2="50" y2="100" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#f0c040"/>
+                            <stop offset="50%" stop-color="#e8a838"/>
+                            <stop offset="100%" stop-color="#f07830"/>
+                        </linearGradient>
+                    </defs>
+                    <path d="M50 5C50 5 25 35 25 55C25 70 36 82 50 85C64 82 75 70 75 55C75 35 50 5 50 5Z" fill="url(#flame-grad-nav)" opacity="0.9"/>
+                    <path d="M50 25C50 25 35 45 35 58C35 67 42 74 50 76C58 74 65 67 65 58C65 45 50 25 50 25Z" fill="#fff" opacity="0.3"/>
+                    <circle cx="50" cy="90" r="7" fill="url(#flame-grad-nav)"/>
+                </svg>
+                <div>
+                    <div style="font-size: 1rem; line-height: 1;">SIEG's</div>
+                    <div style="font-size: 0.6rem; font-weight: 400; opacity: 0.7; letter-spacing: 1px;">ENERGI GEMILANG</div>
+                </div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#beranda" onclick="closeNav()">Beranda</a></li>
+                <li><a href="#tentang" onclick="closeNav()">Tentang</a></li>
+                <li><a href="#layanan" onclick="closeNav()">Layanan</a></li>
+                <li><a href="#keunggulan" onclick="closeNav()">Keunggulan</a></li>
+                <li><a href="#legalitas" onclick="closeNav()">Legalitas</a></li>
+                <li><a href="#kontak" onclick="closeNav()">Kontak</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" onclick="toggleNav()" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="beranda">
+        <div class="hero-bg-elements">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="circle circle-3"></div>
+        </div>
+        <div class="hero-grid"></div>
+        <div class="hero-particles" id="particles"></div>
+
+        <div class="hero-content">
+            <div class="hero-logo-wrapper">
+                <svg class="hero-logo-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="flame-grad" x1="100" y1="10" x2="100" y2="190" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#f0c040"/>
+                            <stop offset="40%" stop-color="#e8a838"/>
+                            <stop offset="100%" stop-color="#f07830"/>
+                        </linearGradient>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="4" result="blur"/>
+                            <feMerge>
+                                <feMergeNode in="blur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <!-- Outer flame -->
+                    <path d="M100 15C100 15 45 70 45 110C45 140 70 165 100 170C130 165 155 140 155 110C155 70 100 15 100 15Z" 
+                          fill="url(#flame-grad)" filter="url(#glow)" opacity="0.9"/>
+                    <!-- Inner flame -->
+                    <path d="M100 50C100 50 65 90 65 115C65 135 80 148 100 152C120 148 135 135 135 115C135 90 100 50 100 50Z" 
+                          fill="#fff" opacity="0.2"/>
+                    <!-- Core flame -->
+                    <path d="M100 80C100 80 82 105 82 118C82 128 90 136 100 138C110 136 118 128 118 118C118 105 100 80 100 80Z" 
+                          fill="#fff" opacity="0.15"/>
+                    <!-- Sun circle -->
+                    <circle cx="100" cy="178" r="14" fill="url(#flame-grad)" filter="url(#glow)"/>
+                    <circle cx="100" cy="178" r="8" fill="#fff" opacity="0.3"/>
+                </svg>
+                <div class="hero-brand">SIEG's</div>
+            </div>
+            <h1>PT. Surya Independen<br><span>Energi Gemilang</span></h1>
+            <p class="hero-tagline">Solusi Energi Gas Bumi Terkompresi untuk Indonesia — Lebih Bersih, Lebih Efisien, Lebih Andal</p>
+            <div class="hero-buttons">
+                <a href="#kontak" class="btn-primary">
+                    <i class="fas fa-envelope"></i> Hubungi Kami
+                </a>
+                <a href="#layanan" class="btn-secondary">
+                    <i class="fas fa-arrow-right"></i> Lihat Layanan
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-scroll-indicator">
+            <span>SCROLL</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="wave-divider">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path fill="#ffffff" d="M0,40 C360,100 1080,0 1440,60 L1440,100 L0,100 Z"/>
+        </svg>
+    </div>
+
+    <!-- ========== ABOUT ========== -->
+    <section class="about" id="tentang">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text fade-up">
+                    <h3><i class="fas fa-fire"></i> Tentang Kami</h3>
+                    <h2>Penyedia Energi Gas Bumi Terpercaya di Jawa Timur</h2>
+                    <p>
+                        <strong>PT. Surya Independen Energi Gemilang</strong> adalah perusahaan yang bergerak di bidang penyediaan dan distribusi energi gas bumi. Berbasis di koridor industri Jawa Timur, perusahaan ini melayani sektor manufaktur dan komersial di wilayah Mojokerto, Jombang, Sidoarjo, Pasuruan, dan sekitarnya.
+                    </p>
+                    <p>
+                        Perusahaan berfokus pada teknologi <strong>Compressed Natural Gas (CNG)</strong> sebagai alternatif bahan bakar industri yang lebih bersih dan efisien dibanding solar atau LPG. Dengan layanan <em>end-to-end</em>, kami siap mendukung kebutuhan energi industri Anda.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
+                            <div>
+                                <div class="stat-value">2019</div>
+                                <div class="stat-label">Tahun Berdiri</div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <div class="stat-value">Jatim</div>
+                                <div class="stat-label">Wilayah Operasi</div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div>
+                                <div class="stat-value">PMDN</div>
+                                <div class="stat-label">Terverifikasi</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual fade-up">
+                    <div class="about-card-visual">
+                        <div class="big-icon">
+                            <i class="fas fa-fire-flame-curved"></i>
+                        </div>
+                        <h3>Compressed Natural Gas</h3>
+                        <p>CNG adalah gas alam yang dikompresi pada tekanan tinggi sebagai bahan bakar alternatif yang ramah lingkungan, hemat biaya, dan efisien untuk kebutuhan industri dan komersial.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SERVICES ========== -->
+    <section class="services" id="layanan">
+        <div class="container">
+            <div class="section-title fade-up">
+                <h2>Layanan Kami</h2>
+                <p>Solusi energi gas bumi yang komprehensif dari hulu ke hilir untuk kebutuhan industri Anda</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-up">
+                    <div class="service-icon">
+                        <i class="fas fa-gas-pump"></i>
+                    </div>
+                    <h3>Suplai & Distribusi Gas</h3>
+                    <p>Menyediakan pasokan gas bumi terkompresi (CNG) sebagai alternatif bahan bakar industri yang lebih bersih dan efisien dibanding solar atau LPG. Kami memastikan ketersediaan pasokan yang konsisten dan berkualitas tinggi.</p>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-icon">
+                        <i class="fas fa-cubes"></i>
+                    </div>
+                    <h3>Penyediaan Canister</h3>
+                    <p>Menyiapkan wadah penyimpanan gas bergerak (mobile storage unit) untuk pengiriman volume besar ke lokasi konsumen. Canister kami dirancang untuk memenuhi standar keamanan dan efisiensi tertinggi.</p>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-icon">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3>Manajemen Perjalanan</h3>
+                    <p>Mengelola rantai pasok dan logistik armada pengangkut gas demi memastikan ketepatan waktu pengiriman dan keselamatan operasional (safety fleet). Sistem trip management terintegrasi untuk efisiensi maksimal.</p>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-icon">
+                        <i class="fas fa-gears"></i>
+                    </div>
+                    <h3>Instalasi PRS</h3>
+                    <p>Menyediakan dan memasang Pressure Reduction System (PRS) di lokasi pabrik/pelanggan agar gas siap dialirkan ke mesin industri sesuai spesifikasi tekanan yang dibutuhkan. Layanan lengkap dari survei hingga commissioning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ADVANTAGES ========== -->
+    <section class="advantages" id="keunggulan">
+        <div class="container">
+            <div class="section-title fade-up">
+                <h2>Mengapa Memilih Kami?</h2>
+                <p>Komitmen kami terhadap kualitas, keamanan, dan kepuasan pelanggan menjadi fondasi setiap layanan</p>
+            </div>
+            <div class="advantages-grid">
+                <div class="advantage-item fade-up">
+                    <div class="adv-icon"><i class="fas fa-leaf"></i></div>
+                    <h4>Energi Bersih & Efisien</h4>
+                    <p>CNG menghasilkan emisi lebih rendah dibandingkan bahan bakar fosil konvensional</p>
+                </div>
+                <div class="advantage-item fade-up">
+                    <div class="adv-icon"><i class="fas fa-clock"></i></div>
+                    <h4>Pengiriman Tepat Waktu</h4>
+                    <p>Sistem logistik terintegrasi memastikan pasokan gas tiba sesuai jadwal</p>
+                </div>
+                <div class="advantage-item fade-up">
+                    <div class="adv-icon"><i class="fas fa-hard-hat"></i></div>
+                    <h4>Keselamatan Terjamin</h4>
+                    <p>Standar keselamatan operasional tinggi di setiap tahap distribusi dan instalasi</p>
+                </div>
+                <div class="advantage-item fade-up">
+                    <div class="adv-icon"><i class="fas fa-link"></i></div>
+                    <h4>Layanan End-to-End</h4>
+                    <p>Solusi menyeluruh dari suplai gas hingga instalasi sistem di lokasi Anda</p>
+                </div>
+                <div class="advantage-item fade-up">
+                    <div class="adv-icon"><i class="fas fa-certificate"></i></div>
+                    <h4>Terverifikasi Resmi</h4>
+                    <p>Terdaftar dan terverifikasi oleh Kemenkumham RI & Dirjen AHU</p>
+                </div>
+                <div class="advantage-item fade-up">
+                    <div class="adv-icon"><i class="fas fa-industry"></i></div>
+                    <h4>Berpengalaman di Jatim</h4>
+                    <p>Memahami kebutuhan industri di koridor manufaktur Jawa Timur</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== LEGAL ========== -->
+    <section class="legal" id="legalitas">
+        <div class="container">
+            <div class="section-title fade-up">
+                <h2>Legalitas Perusahaan</h2>
+                <p>Perusahaan kami telah terverifikasi resmi dan memiliki seluruh dokumen perizinan yang sah</p>
+            </div>
+            <div class="legal-content">
+                <div class="legal-info fade-up">
+                    <h3>Informasi Legal</h3>
+                    <div class="legal-item">
+                        <i class="fas fa-building"></i>
+                        <div>
+                            <div class="label">Nama Perusahaan</div>
+                            <div class="value">PT. Surya Independen Energi Gemilang</div>
+                        </div>
+                    </div>
+                    <div class="legal-item">
+                        <i class="fas fa-id-card"></i>
+                        <div>
+                            <div class="label">Nomor Induk Berusaha (NIB)</div>
+                            <div class="value">9120400411425</div>
+                        </div>
+                    </div>
+                    <div class="legal-item">
+                        <i class="fas fa-file-contract"></i>
+                        <div>
+                            <div class="label">Nomor Registrasi</div>
+                            <div class="value">1001283</div>
+                        </div>
+                    </div>
+                    <div class="legal-item">
+                        <i class="fas fa-landmark"></i>
+                        <div>
+                            <div class="label">Bentuk Hukum</div>
+                            <div class="value">Perseroan Terbatas (PT) Swasta Nasional</div>
+                        </div>
+                    </div>
+                    <div class="legal-item">
+                        <i class="fas fa-flag"></i>
+                        <div>
+                            <div class="label">Status Penanaman Modal</div>
+                            <div class="value">PMDN (Penanaman Modal Dalam Negeri)</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="legal-description fade-up">
+                    <h3>Terdaftar & Terverifikasi</h3>
+                    <p>
+                        PT. Surya Independen Energi Gemilang telah terverifikasi resmi melalui <strong>Direktorat Jenderal Administrasi Hukum Umum (AHU)</strong>, Kementerian Hukum dan HAM Republik Indonesia.
+                    </p>
+                    <p>
+                        Perizinan berusaha berbasis risiko telah diterbitkan melalui sistem OSS (Online Single Submission) sesuai ketentuan peraturan perundang-undangan yang berlaku.
+                    </p>
+                    <div class="legal-badges">
+                        <div class="legal-badge">
+                            <i class="fas fa-check-circle"></i> Kemenkumham RI
+                        </div>
+                        <div class="legal-badge">
+                            <i class="fas fa-check-circle"></i> Dirjen AHU
+                        </div>
+                        <div class="legal-badge">
+                            <i class="fas fa-check-circle"></i> OSS Verified
+                        </div>
+                        <div class="legal-badge">
+                            <i class="fas fa-check-circle"></i> PMDN
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="contact" id="kontak">
+        <div class="container">
+            <div class="section-title fade-up">
+                <h2>Hubungi Kami</h2>
+                <p>Siap melayani kebutuhan energi gas bumi Anda. Jangan ragu untuk menghubungi kami.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info-card fade-up">
+                    <h3>Informasi Kontak</h3>
+                    <p>Hubungi kami melalui telepon, email, atau kunjungi kantor kami.</p>
+
+                    <div class="contact-detail">
+                        <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <div class="detail-label">Alamat Kantor</div>
+                            <div class="detail-value">Dusun Tegalsari, Kab. Mojokerto,<br>Jawa Timur 61363</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="icon-box"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <div class="detail-label">Telepon</div>
+                            <div class="detail-value"><a href="tel:08113418023">0811-3418-023</a></div>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <div class="detail-label">Email</div>
+                            <div class="detail-value"><a href="mailto:mashudganis@gmail.com">mashudganis@gmail.com</a></div>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="icon-box"><i class="fab fa-whatsapp"></i></div>
+                        <div>
+                            <div class="detail-label">WhatsApp</div>
+                            <div class="detail-value"><a href="https://wa.me/628113418023" target="_blank">0811-3418-023</a></div>
+                        </div>
+                    </div>
+
+                    <div class="contact-social">
+                        <a href="https://wa.me/628113418023" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:mashudganis@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:08113418023" title="Telepon"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-map fade-up">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126646.19308558384!2d112.37655!3d-7.4704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7808d3f51a3e0d%3A0x4027a76e352ec00!2sKabupaten%20Mojokerto%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1699099200000!5m2!1sid!2sid" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Lokasi PT. Surya Independen Energi Gemilang">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg width="36" height="36" viewBox="0 0 100 100" fill="none">
+                            <defs>
+                                <linearGradient id="flame-grad-ft" x1="50" y1="0" x2="50" y2="100" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#f0c040"/>
+                                    <stop offset="100%" stop-color="#f07830"/>
+                                </linearGradient>
+                            </defs>
+                            <path d="M50 5C50 5 25 35 25 55C25 70 36 82 50 85C64 82 75 70 75 55C75 35 50 5 50 5Z" fill="url(#flame-grad-ft)" opacity="0.9"/>
+                            <circle cx="50" cy="90" r="7" fill="url(#flame-grad-ft)"/>
+                        </svg>
+                        <h3>SIEG's</h3>
+                    </div>
+                    <p>PT. Surya Independen Energi Gemilang — Penyedia dan distributor energi gas bumi terkompresi (CNG) terpercaya di Jawa Timur.</p>
+                </div>
+
+                <div>
+                    <h4>Navigasi</h4>
+                    <ul class="footer-links">
+                        <li><a href="#beranda"><i class="fas fa-chevron-right" style="font-size:0.7rem"></i> Beranda</a></li>
+                        <li><a href="#tentang"><i class="fas fa-chevron-right" style="font-size:0.7rem"></i> Tentang</a></li>
+                        <li><a href="#layanan"><i class="fas fa-chevron-right" style="font-size:0.7rem"></i> Layanan</a></li>
+                        <li><a href="#keunggulan"><i class="fas fa-chevron-right" style="font-size:0.7rem"></i> Keunggulan</a></li>
+                        <li><a href="#legalitas"><i class="fas fa-chevron-right" style="font-size:0.7rem"></i> Legalitas</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Layanan</h4>
+                    <ul class="footer-links">
+                        <li><a href="#layanan"><i class="fas fa-chevron-right" style="font-size:0.7rem"></i> Suplai Gas CNG</a></li>
+                        <li><a href="#layanan"><i class="fas fa-chevron-right" style="font-size:0.7rem"></i> Penyediaan Canister</a></li>
+                        <li><a href="#layanan"><i class="fas fa-chevron-right" style="font-size:0.7rem"></i> Trip Management</a></li>
+                        <li><a href="#layanan"><i class="fas fa-chevron-right" style="font-size:0.7rem"></i> Instalasi PRS</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Kontak</h4>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Dusun Tegalsari, Kab. Mojokerto, Jawa Timur 61363</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>0811-3418-023</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>mashudganis@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 PT. Surya Independen Energi Gemilang. Seluruh hak cipta dilindungi undang-undang.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== WHATSAPP FLOAT ========== -->
+    <a href="https://wa.me/628113418023" target="_blank" class="whatsapp-float" aria-label="Chat via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="tooltip">Chat via WhatsApp</span>
+    </a>
+
+    <!-- ========== BACK TO TOP ========== -->
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+        // ===== Particles =====
+        (function createParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 30; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.animationDuration = (Math.random() * 8 + 6) + 's';
+                p.style.animationDelay = (Math.random() * 10) + 's';
+                p.style.width = (Math.random() * 3 + 1) + 'px';
+                p.style.height = p.style.width;
+                container.appendChild(p);
+            }
+        })();
+
+        // ===== Navbar Scroll =====
+        const navbar = document.getElementById('navbar');
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            
+            if (scrollY > 80) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            if (scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // ===== Mobile Nav Toggle =====
+        function toggleNav() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        function closeNav() {
+            document.getElementById('navLinks').classList.remove('active');
+        }
+
+        // ===== Scroll Animations (IntersectionObserver) =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    // Stagger animation
+                    const delay = Array.from(entry.target.parentElement.children)
+                        .filter(el => el.classList.contains('fade-up'))
+                        .indexOf(entry.target) * 100;
+                    
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, delay);
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // ===== Smooth scroll for anchor links =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ===== Active nav link highlight =====
+        const sections = document.querySelectorAll('section[id]');
+        
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY + 120;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    document.querySelectorAll('.nav-links a').forEach(a => {
+                        a.style.color = '';
+                        if (a.getAttribute('href') === '#' + sectionId) {
+                            a.style.color = '#e8a838';
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
